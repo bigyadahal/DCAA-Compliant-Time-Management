@@ -1,0 +1,1577 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>DCAA Compliance - Home</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="main.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body></body>
+
+<!-- SITEWIDE PAGE TEMPLATES -->
+<!-- everything in main is shown on all pages, yield enforces display to all pages -->
+<template name="Main"> {{> Navigation}} {{> yield }}
+    <footer>
+        <!-- left footer box end-->
+        <div class="footer-container-left">
+            <h2>resources</h2>
+            <ul class="footer-list">
+                <li class="footer-list-item"><a class="footer-link" href="https://www.dcaa.mil/">Defense Contract Audit Agency</a></li>
+                <li class="footer-list-item"><a class="footer-link" href="https://www.facebook.com/DefenseContractAuditAgency/">
+                        DCAA Facebook</a></li>
+                <li class="footer-list-item"><a class="footer-link" href="https://en.wikipedia.org/wiki/Defense_Contract_Audit_Agency">
+                        DCAA Wiki</a></li>
+                <li class="footer-list-item"><a class="footer-link" href="https://www.deltek.com/en/learn/blogs/government-contracting/2017/08/what-is-dcaa-compliance">
+                        Deltek - Understanding DCAA</a></li>
+            </ul>
+        </div>
+        <!-- footer left end-->
+        <!-- footer center -->
+        <div class="footer-container-center">
+            <h2>contacts</h2>
+            <ul class="footer-list">
+                <li class="footer-list-item"><a class="footer-link" href="#">FAQ</a></li>
+                <li class="footer-list-item"><a class="footer-link" href="#">Feedback</a></li>
+                <li class="footer-social">
+                    <img class="footer-social-logo" src="images/discord_logo.png" alt="discord">
+                    <img class="footer-social-logo" src="images/facebook_logo.png" alt="facebook">
+                    <img class="footer-social-logo" src="images/twitter_logo.png" alt="twitter">
+                    <img class="footer-social-logo" src="images/instagram_logo.png" alt="instagram">
+                </li>
+            </ul>
+        </div>
+        <!-- footer center end -->
+        <!-- footer right -->
+        <div class="footer-container-right">
+            <div class="footer-container-right-textbox">
+                <br>
+                <p>F20 CSI 4999 Capstone Project</p><br>
+                <p>DCAA Compliance &copy;2020</p><br>
+                <p>Use for academic purpose only</p>
+            </div>
+        </div>
+        <!-- footer right end -->
+        <!-- footer logo -->
+        <div class="footer-container-logo">
+            <img class="footer-dcaa-logo" src="images/dcaa_logo.png" alt="logo">
+        </div>
+        <!-- footer logo end -->
+    </footer>
+</template>
+<template name="Navigation">
+    <header>
+        <a class="header-bar-log" href="{{pathFor route='Home'}}">
+            <img class="header-logo-image" src="images/ownuplogo.png" alt="logo"></a>
+        <nav class="header-bar-nav">
+            <ul class="header-list">
+                <li class="header-list-item"><a class="header-link" href="{{pathFor route='OwnerBusinessRegistration'}}">Register Business</a></li>
+                {{#if isInRole "business" }}
+                    <li class="header-list-item"><a class="header-link" href="{{pathFor route='OwnerProfile'}}">Owner Profile</a></li>
+                {{else }}
+                    {{#if isInRole "user" }}
+                        <li class="header-list-item"><a class="header-link" href="{{pathFor route='EmployeeProfile'}}">Employee Profile</a></li>
+                    {{else }}
+                        {{#if isInRole "admin" }}
+                            <li class="header-list-item"><a class="header-link" href="{{pathFor route='AdminProfile'}}">Admin Profile</a></li>
+                        {{/if}}
+                    {{/if}}
+                {{/if}}
+            </ul>
+        </nav>
+        <!-- 12/03 AB: issue checking for currentUser and displaying logout button
+ {{#if isInRole "admin" }} this is logic for determing user
+{{#if currentUser}}-->
+        {{#if currentUser}}
+            <div class="header-bar-login-button">
+                <a class="logout" href="#">
+                    <button class="header-login-button">Logout</button></a>
+            </div>
+        {{else}}
+            <a class="header-bar-login-button" href="{{pathFor route='Login'}}">
+                <button class="header-login-button">Login</button></a>
+        {{/if}}
+    </header>
+</template>
+<template name="logout">
+    <!-- <p>Welcome New User!</p>
+    <div class="emp">
+        <ul>
+            <li><a href="{{pathFor route='myTimesheets'}}">MY TIME SHEETS </a></li>
+            <li><a href="{{pathFor route='myDashboard'}}">MY DASHBOARD </a></li>
+            <li><a href="{{pathFor route='hourJustification'}}">HOUR JUSTIFICATION </a></li>
+            {{#if currentUser}}
+                <li><a href="#" class="logout">Logout</a></li>
+            {{/if}}
+        </ul>
+    </div> -->
+</template>
+
+<!-- HEADER NAVIGATION & ASSOCIATED LINKS -->
+<template name="Home">
+    <!-- banner section -->
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>dcaa compliance links</h2>
+                <span class="page-banner-byline">sources and utilities for regular use</span>
+            </div>
+            <div class="home-page-banner-nav-bar">
+                <ul class="home-page-banner-list">
+                    <li class="home-page-banner-list-item"><a class="page-banner-link" href="https://www.dcaa.mil/">DCAA Hompage</a></li>
+                    <li class="home-page-banner-list-item"><a class="page-banner-link" href="https://www.dcaa.mil/ChecklistsAndTools/">DCAA Checklists & Tools</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- banner section end-->
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            <div class="page-content-container">
+                <div class="page-content-title">
+                    <hr class="section-hr">
+                    <h2>information about dcaa compliance</h2>
+                    <span class="page-content-byline">
+                        follow these links for additional information and resources</span>
+                    <hr class="section-hr">
+                </div>
+                <div class="home-page-content-textbox-wrapper">
+                    <div class="home-page-content-textbox-container">
+                        <div class="home-page-content-textbox-title">
+                            <h2>business management</h2>
+                        </div>
+                        <div class="home-page-content-textbox-links">
+                            <a href="https://www.dcaa.mil/Customers/Small-Business/">
+                                Help For Small Business Contractors</a>
+                            <br><br>
+                            <a href="https://www.fedpubseminars.com/Accounting-Costs-and-Pricing/
+                  DCAA-Contractor-Business-Systems-and-Internal-Controls/">
+                                DCAA Business Systems Internal Control Course</a>
+                        </div>
+                        <img class="home-page-content-textbox-image" src="images\dcaa_checklist-tools_1.jpg" alt="">
+                    </div>
+                    <div class="home-page-content-textbox-container">
+                        <div class="home-page-content-textbox-title">
+                            <h2>employee utilities</h2>
+                        </div>
+                        <div class="home-page-content-textbox-links">
+                            <a href="https://www.dcaa.mil/Careers/">
+                                DCAA Employees</a>
+                            <br><br>
+                            <a href="https://www.fedpubseminars.com/Accounting-Costs-and-Pricing/
+                  DCAA-Contractor-Business-Systems-and-Internal-Controls/">
+                                DCAA Business Systems Internal Control Course</a>
+                        </div>
+                        <img class="home-page-content-textbox-image" src="images\dcaa_checklist-tools_2.jpg" alt="">
+                    </div>
+                    <div class="home-page-content-textbox-container">
+                        <div class="home-page-content-textbox-title">
+                            <h2>dcaa audit tools</h2>
+                        </div>
+                        <div class="home-page-content-textbox-links">
+                            <a href="https://www.dcaa.mil/Guidance/Audit-Process-Overview/">
+                                Audit Process Overview</a>
+                            <br><br>
+                            <a href="https://www.dcaa.mil/Guidance/Directory-of-Audit-Programs/">
+                                Directory of Audit Programs</a>
+                        </div>
+                        <img class="home-page-content-textbox-image" src="images\dcaa_checklist-tools_3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="page-content-footer-gap"></div>
+            </div>
+        </div>
+    </div>
+    <!-- main section end -->
+</template>
+<template name="Login">
+    <!-- banner section -->
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>login page</h2>
+            </div>
+        </div>
+    </div>
+    <!-- banner section end -->
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            <div class="login-page-content-container">
+                <!-- login form -->
+                <form class="login-page-form">
+                    <hr class="section-hr">
+                    <div class="page-content-title">
+                        <h2>user authentication</h2>
+                        <span class="page-content-byline">enter user email & password below</span>
+                    </div>
+                    <hr class="section-hr">
+                    <div class="login-page-content-box">
+                        <h2>Email Account</h2>
+                        <input class="login-page-formfield" type="email" placeholder="Email" name="loginEmail" required>
+                        <br>
+                        <h2>Password</h2>
+                        <input class="login-page-formfield" type="password" placeholder="Password" name="loginPassword" required>
+                    </div>
+                    <input class="login-page-button" type="submit" value="LOGIN">
+                    <br>
+                    <a href="{{pathFor route='ChangePassword'}}"><button class="login-page-changepwd-button">
+                            CHANGE PASSWORD</button></a>
+                </form>
+                <!-- login form end -->
+            </div>
+        </div>
+    </div>
+    <!-- main section end -->
+</template>
+<template name="ChangePassword">
+    <!-- banner section -->
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>change password</h2>
+            </div>
+        </div>
+    </div>
+    <!-- banner section end -->
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            <div class="changepwd-page-content-container">
+                <!-- change password form -->
+                <form class="changepwd-page-form">
+                    <hr class="section-hr">
+                    <div class="page-content-title">
+                        <h2>changing user authentication information</h2>
+                        <span class="page-content-byline">enter current & new user credentials below</span>
+                    </div>
+                    <hr class="section-hr">
+                    <div class="changepwd-page-content-box">
+                        <h2>Current Login Information</h2>
+                        <input class="changepwd-page-formfield" type="email" placeholder="Email" name="loginEmail" required>
+                        <br>
+                        <input class="changepwd-page-formfield" type="password" placeholder="Old Password" name="oldPassword" required>
+                        <br>
+                        <br>
+                        <h2>New Password</h2>
+                        <input class="changepwd-page-formfield" type="password" placeholder="New Password" name="newPassword" required>
+                        <br>
+                        <input class="changepwd-page-formfield" type="password" placeholder="Re-enter New Password" name="rePassword" required>
+                    </div>
+                    <input class="changepwd-page-button" type="submit" value="SUBMIT">
+                </form>
+                <!-- change password form end -->
+            </div>
+        </div>
+    </div>
+    <!-- main section end -->
+</template>
+<template name="OwnerBusinessRegistration">
+    <!-- banner section -->
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>owner & business registration form</h2>
+            </div>
+        </div>
+    </div>
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            <div class="page-content-container">
+                <!-- owner & business registration form -->
+                <form>
+                    <div class="page-content-title">
+                        <hr class="section-hr">
+                        <h2>owner information</h2>
+                        <hr class="section-hr">
+                    </div>
+                    <div class="page-content-container">
+                        <input class="register-formfield" type="text" placeholder="First Name" name="fName" id="fName" required>
+                        <input class="register-formfield" type="text" placeholder="Last Name" name="lName" id="lName" required>
+                        <input class="register-formfield" type="email" placeholder="Email" name="regEmail" id="regEmail" required>
+                        <input class="register-formfield" type="password" placeholder="Password" name="regPassword" id="regPassword" required>
+                        <input class="register-formfield" type="tel" placeholder="Phone #" name="contact" id="contact" required>
+                        <br>
+                        <input class="register-formfield" type="text" placeholder="Address" name="home" id="home" required>
+                        <input class="register-formfield" type="text" placeholder="City" name="city" id="city" required>
+                        <input class="register-formfield" type="text" placeholder="State" name="state" id="state" required>
+                        <input class="register-formfield" type="text" placeholder="Zip Code" name="zip" id="zip" required>
+                        <select class="register-select-dropdown" name="country" id="country" required>
+                            <option value="australia">Australia</option>
+                            <option value="canada">Canada</option>
+                            <option value="china">China</option>
+                            <option value="germany">Germany</option>
+                            <option value="japan">Japan</option>
+                            <option value="united states">United States</option>
+                        </select>
+                    </div>
+                    <div class="page-content-title">
+                        <hr class="section-hr">
+                        <h2>business information</h2>
+                        <hr class="section-hr">
+                    </div>
+                    <div class="page-content-container">
+                        <input class="register-formfield" type="text" placeholder="Business Name" name="businessName" id="businessName" required>
+                        <input class="register-formfield" type="email" placeholder="Business Email" name="businessEmail" id="businessEmail" required>
+                        <input class="register-formfield" type="tel" placeholder="Business Phone #" name="businessNumber" id="businessNumber" required>
+                        <br>
+                        <input class="register-formfield" type="text" placeholder="Address" name="businessAddress" id="businessAddress" required>
+                        <input class="register-formfield" type="text" placeholder="City" name="bCity" id="bCity" required>
+                        <input class="register-formfield" type="text" placeholder="State" name="bState" id="bState" required>
+                        <input class="register-formfield" type="text" placeholder="Zip Code" name="bZip" id="bZip" required>
+                        <select class="register-select-dropdown" name="bCountry" id="bCountry" required>
+                            <option value="australia">Australia</option>
+                            <option value="canada">Canada</option>
+                            <option value="china">China</option>
+                            <option value="germany">Germany</option>
+                            <option value="japan">Japan</option>
+                            <option value="united states">United States</option>
+                        </select>
+                    </div>
+                    <hr class="section-hr">
+                    <input class="register-submit-button" type="submit" value="REGISTER">
+                </form>
+                <!-- owner & business registration form end -->
+            </div>
+        </div>
+    </div>
+</template>
+
+<!-- OWNER PAGE -->
+<template name="OwnerProfile">
+    <!-- banner section -->
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>owner profile</h2>
+            </div>
+        </div>
+    </div>
+    <!-- banner section end -->
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            <div class="page-content-container">
+                <!-- owner profile nav-bar -->
+                {{> OwnerProfileNavBar}}
+                <!-- send e-mail invite to employee -->
+                {{> EmployeeRegistrationEmail}}
+                <!-- assign project & role to employee -->
+                {{> AssignToProject}}
+                <!-- timesheet dashboard approvals -->
+                {{> myDashboardEmail}}
+            </div>
+        </div>
+    </div>
+</template>
+<!-- OWNER PROFILE PAGES & TEMPLATES -->
+<template name="OwnerProfileNavBar">
+    <div class="profile-nav-bar-wrapper">
+        <div class="profile-nav-bar-dropdown">
+            <button class="profile-nav-bar-dropbtn">Owner & Business Options</button>
+            <div class="profile-nav-bar-dropdown-content">
+                <a href="{{ pathFor route = 'ChangePassword' }}">Change Password</a>
+                <a href="{{ pathFor route = 'EditOwnerInfo' }}">Edit Owner Information</a>
+                <a href="{{ pathFor route = 'EditBusinessInfo' }}">Edit Business Information</a>
+                <a href="{{ pathFor route = 'AddBusinessAdmin' }}">Add Business Administrator</a>
+            </div>
+        </div>
+        <div class="profile-nav-bar-dropdown">
+            <button class="profile-nav-bar-dropbtn">Business Management</button>
+            <div class="profile-nav-bar-dropdown-content">
+                <a href="{{pathFor route='AdminList'}}">Administrator List</a>
+                <a href="{{pathFor route='EmployeeList'}}">Employee List</a>
+                <a href="{{ pathFor route = 'ProjectList' }}">Project List</a>
+            </div>
+        </div>
+        <div class="profile-nav-bar-dropdown">
+            <button class="profile-nav-bar-dropbtn">Utilities</button>
+            <div class="profile-nav-bar-dropdown-content">
+                <a href="{{pathFor route='last30'}}">Time Sheet Submission</a>
+                <a href="{{ pathFor route = 'expenseSubmitView' }}">Expense Report</a>
+            </div>
+        </div>
+    </div>
+</template>
+<template name="EditOwnerInfo">
+    <!-- banner section -->
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>edit owner information form</h2>
+            </div>
+        </div>
+    </div>
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            <div class="page-content-container">
+                <!-- owner & business registration form -->
+                <form>
+                    <div class="page-content-title">
+                        <hr class="section-hr">
+                        <h2>edit owner information</h2>
+                        <hr class="section-hr">
+                    </div>
+                    <div class="page-content-container">
+                        <input class="register-formfield" type="text" placeholder="First Name" name="fName" id="fName" required>
+                        <input class="register-formfield" type="text" placeholder="Last Name" name="lName" id="lName" required>
+                        <input class="register-formfield" type="email" placeholder="Email" name="regEmail" id="regEmail" required>
+                        <input class="register-formfield" type="password" placeholder="Password" name="regPassword" id="regPassword" required>
+                        <input class="register-formfield" type="tel" placeholder="Phone #" name="contact" id="contact" required>
+                        <br>
+                        <input class="register-formfield" type="text" placeholder="Address" name="home" id="home" required>
+                        <input class="register-formfield" type="text" placeholder="City" name="city" id="city" required>
+                        <input class="register-formfield" type="text" placeholder="State" name="state" id="state" required>
+                        <input class="register-formfield" type="text" placeholder="Zip Code" name="zip" id="zip" required>
+                        <select class="register-select-dropdown" name="country" id="country" required>
+                            <option value="australia">Australia</option>
+                            <option value="canada">Canada</option>
+                            <option value="china">China</option>
+                            <option value="germany">Germany</option>
+                            <option value="japan">Japan</option>
+                            <option value="united states">United States</option>
+                        </select>
+                    </div>
+                    <hr class="section-hr">
+                    <input class="register-submit-button" type="submit" value="EDIT">
+                </form>
+                <!-- owner & business registration form end -->
+            </div>
+        </div>
+    </div>
+</template>
+<template name="EditBusinessInfo">
+    <!-- banner section -->
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>edit business registration form</h2>
+            </div>
+        </div>
+    </div>
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            <div class="page-content-container">
+                <!-- owner & business registration form -->
+                <form>
+                    <div class="page-content-title">
+                        <hr class="section-hr">
+                        <h2>edit business information</h2>
+                        <hr class="section-hr">
+                    </div>
+                    <div class="page-content-container">
+                        <input class="register-formfield" type="text" placeholder="Business Name" name="businessName" id="businessName" required>
+                        <input class="register-formfield" type="email" placeholder="Business Email" name="businessEmail" id="businessEmail" required>
+                        <input class="register-formfield" type="tel" placeholder="Business Phone #" name="businessNumber" id="businessNumber" required>
+                        <br>
+                        <input class="register-formfield" type="text" placeholder="Address" name="businessAddress" id="businessAddress" required>
+                        <input class="register-formfield" type="text" placeholder="City" name="bCity" id="bCity" required>
+                        <input class="register-formfield" type="text" placeholder="State" name="bState" id="bState" required>
+                        <input class="register-formfield" type="text" placeholder="Zip Code" name="bZip" id="bZip" required>
+                        <select class="register-select-dropdown" name="bCountry" id="bCountry" required>
+                            <option value="australia">Australia</option>
+                            <option value="canada">Canada</option>
+                            <option value="china">China</option>
+                            <option value="germany">Germany</option>
+                            <option value="japan">Japan</option>
+                            <option value="united states">United States</option>
+                        </select>
+                    </div>
+                    <hr class="section-hr">
+                    <input class="register-submit-button" type="submit" value="EDIT">
+                </form>
+                <!-- owner & business registration form end -->
+            </div>
+        </div>
+    </div>
+</template>
+<template name="AddBusinessAdmin">
+    <!-- banner section -->
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>administrator registration form</h2>
+            </div>
+        </div>
+    </div>
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            <div class="page-content-container">
+                <!-- admin registration form -->
+                <form>
+                    <div class="page-content-title">
+                        <hr class="section-hr">
+                        <h2>administrator information</h2>
+                        <hr class="section-hr">
+                    </div>
+                    <div class="page-content-container">
+                        <input class="register-formfield" type="text" placeholder="First Name" name="firstName" required>
+                        <input class="register-formfield" type="text" placeholder="Last Name" name="lastName" required>
+                        <input class="register-formfield" type="text" placeholder="Middle Initial (optional)" name="middleName">
+                        <input class="register-formfield" type="tel" placeholder="Phone #" name="registerPhone" required>
+                        <br><br>
+                        <input class="register-formfield" type="email" placeholder="Email" name="regEmail" required>
+                        <input class="register-formfield" type="password" placeholder="Password" name="registerPassword" required>
+                        <input class="register-formfield" type="email" placeholder="Business Email (optional)" name="registerB_Email">
+                        <br><br>
+                        <input class="register-formfield" type="text" placeholder="Address" name="registerAdd" required>
+                        <input class="register-formfield" type="text" placeholder="Address Line 2 (optional)" name="registerAdd_2">
+                        <input class="register-formfield" type="text" placeholder="City" name="registerCity" required>
+                        <input class="register-formfield" type="text" placeholder="State" name="registerState" required>
+                        <input class="register-formfield" type="text" placeholder="Zip Code" name="registerZip" required>
+                        <input class="register-formfield" type="text" placeholder="Employee ID" name="registerEmpID" required>
+                        <input class="register-formfield" type="text" placeholder="SSN" name="registerSSN" required>
+                        <h2>Position:</h2>
+                        <select class="register-select-dropdown" name="position" id="position">
+                            <option value="Admin">Admin</option>
+                        </select>
+                    </div>
+                    <hr class="section-hr">
+                    <input class="register-submit-button" type="submit" value="REGISTER">
+                </form>
+                <!-- admin registration form end -->
+            </div>
+        </div>
+    </div>
+</template>
+<template name="AdminList">
+    <!-- banner section -->
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>administrator list</h2>
+            </div>
+        </div>
+    </div>
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            <div class="page-content-container">
+                <!-- admin list table -->
+                <div class="page-content-title">
+                    <hr class="section-hr">
+                    <h2>administrator list information</h2>
+                    <hr class="section-hr">
+                </div>
+                <div class="table-content-box">
+                    <table class="table-content">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Position</th>
+                                <th>Project</th>
+                                <th>Address</th>
+                                <th>Phone Number</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each userslist}}
+                                <tr>
+                                    <td>{{fname}}</td>
+                                    <td>{{lname}}</td>
+                                    <td>{{email}}</td>
+                                    <td>{{position}}</td>
+                                    <td>
+                                        <select> {{#each employeeprojects this}}
+                                                <option name="myOption" value="option-1">{{project}}</option>
+                                            {{/each}} </select>
+                                    </td>
+                                    <td>{{address}}, {{city}}, {{state}}, {{zip}}</td>
+                                    <td>{{phone}}</td>
+                                    <td><span class="{{#if checked}}checked{{/if}}">
+                                            <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+                                            <button class="delete">x</button></span></td>
+                                </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- admin list table end -->
+            </div>
+        </div>
+    </div>
+</template>
+
+<!-- ADMIN PAGE -->
+<template name="AdminProfile">
+    <!-- banner section -->
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>administrator profile</h2>
+            </div>
+        </div>
+    </div>
+    <!-- banner section end -->
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            <div class="page-content-container">
+                <!-- admin profile nav-bar -->
+                {{> AdminProfileNavBar}}
+                <!-- send e-mail invite to employee -->
+                {{> EmployeeRegistrationEmail}}
+                <!-- assign project & role to employee -->
+                {{> AssignToProject}}
+                <!-- timesheet dashboard approvals -->
+                {{> myDashboardEmail}}
+            </div>
+        </div>
+    </div>
+</template>
+<!-- ADMIN PROFILE PAGES & TEMPLATES -->
+<template name="AdminProfileNavBar">
+    <div class="profile-nav-bar-wrapper">
+        <div class="profile-nav-bar-dropdown">
+            <button class="profile-nav-bar-dropbtn">Administrator Options</button>
+            <div class="profile-nav-bar-dropdown-content">
+                <a href="{{ pathFor route = 'ChangePassword' }}">Change Password</a>
+                <a href="{{ pathFor route = '#' }}">Edit User Information</a>
+            </div>
+        </div>
+        <div class="profile-nav-bar-dropdown">
+            <button class="profile-nav-bar-dropbtn">Business Management</button>
+            <div class="profile-nav-bar-dropdown-content">
+                <a href="{{pathFor route='EmployeeList'}}">Employee List</a>
+                <a href="{{ pathFor route = 'ProjectList' }}">Project List</a>
+            </div>
+        </div>
+        <div class="profile-nav-bar-dropdown">
+            <button class="profile-nav-bar-dropbtn">Utilities</button>
+            <div class="profile-nav-bar-dropdown-content">
+                <a href="{{pathFor route='last30'}}">Time Sheet Submission</a>
+                <a href="{{ pathFor route = 'expenseSubmitView' }}">Expense Report</a>
+            </div>
+        </div>
+    </div>
+</template>
+
+<!-- OWNER/ADMIN SHARED PROFILE PAGES & TEMPLATES -->
+<template name="EmployeeRegistrationEmail">
+    <div class="employee-registration-email-content-container">
+        <!-- employee registration email form -->
+        <form class="employee-registration-email-form">
+            <hr class="section-hr">
+            <div class="page-content-title">
+                <h2>send employee registration email</h2>
+                <span class="page-content-byline">email recipient will be
+                    sent an employee invite to the business</span>
+            </div>
+            <hr class="section-hr">
+            <div class="employee-registration-email-content-box">
+                <h2>Recipient Email Address</h2>
+                <input class="employee-registration-email-formfield" type="email" placeholder="Enter Email Address (ex: jsmith@work.com)" name="employee_email" required>
+            </div>
+            <input class="register-submit-button" type="submit" value="SUBMIT">
+        </form>
+    </div>
+</template>
+<template name="EmployeeRegistration">
+    <!-- banner section -->
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>employee registration form</h2>
+            </div>
+        </div>
+    </div>
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            <div class="page-content-container">
+                <!-- employee registration form -->
+                <form>
+                    <div class="page-content-title">
+                        <hr class="section-hr">
+                        <h2>employee information</h2>
+                        <hr class="section-hr">
+                    </div>
+                    <div class="page-content-container">
+                        <input class="register-formfield" type="text" placeholder="First Name" name="firstName" required>
+                        <input class="register-formfield" type="text" placeholder="Last Name" name="lastName" required>
+                        <input class="register-formfield" type="text" placeholder="Middle Initial (optional)" name="middleName">
+                        <input class="register-formfield" type="tel" placeholder="Phone #" name="registerPhone" required>
+                        <br><br>
+                        <input class="register-formfield" type="email" placeholder="Email" name="regEmail" required>
+                        <input class="register-formfield" type="password" placeholder="Password" name="registerPassword" required>
+                        <input class="register-formfield" type="text" placeholder="Username" name="registerUser" required>
+                        <input class="register-formfield" type="email" placeholder="Business Email (optional)" name="registerB_Email">
+                        <br><br>
+                        <input class="register-formfield" type="text" placeholder="Address" name="registerAdd" required>
+                        <input class="register-formfield" type="text" placeholder="Address Line 2 (optional)" name="registerAdd_2">
+                        <input class="register-formfield" type="text" placeholder="City" name="registerCity" required>
+                        <input class="register-formfield" type="text" placeholder="State" name="registerState" required>
+                        <input class="register-formfield" type="text" placeholder="Zip Code" name="registerZip" required>
+                        <input class="register-formfield" type="text" placeholder="Employee ID" name="registerEmpID" required>
+                        <input class="register-formfield" type="text" placeholder="SSN" name="registerSSN" required>
+                        <h2>Position:</h2>
+                        <select class="register-select-dropdown" name="position" id="position">
+                            <option value="Employee">Employee</option>
+                        </select>
+                    </div>
+                    <hr class="section-hr">
+                    <input class="register-submit-button" type="submit" value="REGISTER">
+                </form>
+                <!-- employee registration form end -->
+            </div>
+        </div>
+    </div>
+</template>
+<template name="AssignToProject">
+    <div class="employee-project-assignment-content-container">
+        <!-- employee registration email form -->
+        <form class="employee-project-assignment">
+            <hr class="section-hr">
+            <div class="page-content-title">
+                <h2>assign employee to project</h2>
+                <span class="page-content-byline">designated employee will
+                    be assigned to a project and given the specified role</span>
+            </div>
+            <hr class="section-hr">
+            <div class="employee-project-assignment-content-box">
+                <div class="employee-project-assignment-content-box-left">
+                    <h2>Project Name</h2>
+                    <input class="employee-project-assignment-formfield" type="text" placeholder="Enter Project Name" name="registerProject" required>
+                </div>
+                <div class="employee-project-assignment-content-box-center">
+                    <h2>Project Role</h2>
+                    <input class="employee-project-assignment-formfield" type="text" placeholder="Enter Project Role" name="assignRole" required>
+                </div>
+                <div class="employee-project-assignment-content-box-right">
+                    <h2>Employee Email Address</h2>
+                    <input class="employee-project-assignment-formfield" type="email" placeholder="Enter Email Address (ex: jsmith@work.com)" name="registerEmail" required>
+                </div>
+            </div>
+            <input class="register-submit-button" type="submit" value="SUBMIT">
+        </form>
+    </div>
+</template>
+
+<!-- EMPLOYEE PAGE -->
+<template name="EmployeeProfile">
+    <!-- banner section -->
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>employee profile</h2>
+            </div>
+        </div>
+    </div>
+    <!-- banner section end -->
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            <div class="page-content-container">
+                <!-- employee profile nav-bar -->
+                {{> EmployeeProfileNavBar}}
+                <!-- timesheet dashboard -->
+                {{> myTimesheets}}
+                <!-- timesheet dashboard -->
+                {{> myDashboard}}
+            </div>
+        </div>
+    </div>
+</template>
+<!-- EMPLAOYEE PROFILE PAGES & TEMPLATES -->
+<template name="EmployeeProfileNavBar">
+    <div class="profile-nav-bar-wrapper">
+        <div class="profile-nav-bar-dropdown">
+            <button class="profile-nav-bar-dropbtn">Employee Options</button>
+            <div class="profile-nav-bar-dropdown-content">
+                <a href="{{ pathFor route = 'ChangePassword' }}">Change Password</a>
+                <a href="{{ pathFor route = '#' }}">Edit User Information</a>
+            </div>
+        </div>
+
+        <div class="profile-nav-bar-dropdown">
+            <button class="profile-nav-bar-dropbtn">Utilities</button>
+            <div class="profile-nav-bar-dropdown-content">
+                <a href="{{pathFor route='last30'}}">Time Sheet Submission</a>
+                <a href="{{ pathFor route = 'expenseSubmitView' }}">Expense Report</a>
+            </div>
+        </div>
+    </div>
+</template>
+
+<!-- OWNER, ADMIN, & EMPLAOYEE SHARED PROFILE PAGES & TEMPLATES -->
+<template name="EmployeeList">
+    <!-- banner section -->
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>employee list</h2>
+            </div>
+        </div>
+    </div>
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            <div class="page-content-container">
+                <!-- employee list table -->
+                <div class="page-content-title">
+                    <hr class="section-hr">
+                    <h2>employee list information</h2>
+                    <hr class="section-hr">
+                </div>
+                <div class="table-content-box">
+                    <table class="table-content">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Position</th>
+                                <th>Project</th>
+                                <th>Project Role</th>
+                                <th>Address</th>
+                                <th>Phone Number</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each userslist}}
+                                <tr>
+                                    <td>{{fname}}</td>
+                                    <td>{{lname}}</td>
+                                    <td><a href="/myDashboardEmail/?email={{email}}" id="myLink">{{email}}</a></td>
+                                    <td>{{position}}</td>
+                                    <td><select id="projectOptions">
+                                            <option name="myOption1" value="SelectProject">Select Project</option>
+                                            {{#each employeeprojects this}}
+                                                <option name="myOption" id="projectOptions" value="{{this.option}}">{{project}}</option>
+                                            {{/each}}
+                                        </select></td>
+                                    <td>{{>span}}</td>
+                                    <td>{{address}}, {{city}}, {{state}}, {{zip}}</td>
+                                    <td>{{phone}}</td>
+                                    <td><span class="{{#if checked}}checked{{/if}}">
+                                            <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+                                            <button class="delete">x</button></span></td>
+                                </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- employee list table end -->
+            </div>
+        </div>
+    </div>
+</template>
+<template name="ProjectList">
+    <!-- banner section -->
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>project list</h2>
+            </div>
+        </div>
+    </div>
+    <!-- banner section end -->
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            <div class="page-content-container">
+                <!-- project list table -->
+                <div class="page-content-title">
+                    <hr class="section-hr">
+                    <h2>project list information</h2>
+                    <hr class="section-hr">
+                </div>
+                <div class="table-content-box">
+                    <table class="table-content" id="Project-info">
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Created By</th>
+                                <th>Customer ID</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Total Hrs</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each userslist}}
+                                <tr>
+                                    <td>
+                                        {{#each employeeprojects this}} {{project}} {{/each}}
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span class="{{#if checked}}checked{{/if}}">
+                                            <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+                                            <button class="delete">x</button></span></td>
+                                </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- project list table end -->
+            </div>
+        </div>
+    </div>
+</template>
+<template name="span"> <span id={{_id}}></span> </template>
+<template name="spanFirst"> <span id="first"></span> </template>
+<template name="last30">
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>time sheet information</h2>
+            </div>
+        </div>
+    </div>
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            <div class="page-content-container">
+                <!-- owner & business registration form -->
+                <div class="last-thirty-days-content-container">
+                    <form>
+                        <div class="page-content-title">
+                            <hr class="section-hr">
+                            <h2>time sheet submission form</h2>
+                            <hr class="section-hr">
+                        </div>
+                        <div class="page-content-container">
+                            <h2>Clock-In Date</h2>
+                            <input class="timesheet-formfield" type="date" name="date" id="date" required>
+                            <br>
+                            <input class="timesheet-formfield" type="text" placeholder="Project Name" id="project" name="project">
+                            <input class="timesheet-formfield" type="number" placeholder="Time Comp" id="timeComp" name="timeComp">
+                            <br>
+                            <select class="timesheet-select-dropdown" id="role" name="role">
+                                <option value="manager">Manager</option>
+                                <option value="team lead">Team Lead</option>
+                                <option value="employee">Member</option>
+                            </select>
+                            <br><br>
+                            <h2>Clock-In & Clock-Out</h2>
+                            <input class="timesheet-formfield" type="time" id="start" name="start">
+                            <input class="timesheet-formfield" type="time" id="end" name="end">
+                            <br><br>
+                            <h2>Hours Type</h2>
+                            <input class="timesheet-formfield" type="number" placeholder="Total Hours" id="totalHr" name="totalHr">
+                            <input class="timesheet-formfield" type="number" placeholder="Normal" id="normal" name="normal">
+                            <br>
+                            <input class="timesheet-formfield" type="number" placeholder="Number of Overtime" id="overtime" name="overtime">
+                            <input class="timesheet-formfield" type="number" placeholder="Number of Sick days" id="sick" name="sick">
+                            <br><br>
+                            <h2>Description</h2>
+                            <textarea class="timesheet-textarea" id="description" name="description"></textarea>
+                        </div>
+                        <input class="timesheet-submit-button" type="submit" name="submit" value="SUBMIT">
+                        <hr class="section-hr">
+                    </form>
+                </div>
+                <!-- owner & business registration form end -->
+            </div>
+            <div class="page-content-container">
+                {{> viewTime}}
+            </div>
+        </div>
+    </div>
+</template>
+<template name="viewTime">
+    <div class="timesheet-info-content-container">
+        <div class="page-content-title">
+            <hr class="section-hr">
+            <h2>time sheet submission review</h2>
+            <hr class="section-hr">
+        </div>
+        <div class="table-content-box">
+            <table class="table-content">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Project</th>
+                        <th>Role</th>
+                        <th>Time Comp</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Total Hours</th>
+                        <th>Normal</th>
+                        <th>OT</th>
+                        <th>Sick / Vacaction</th>
+                        <th>Approval Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each viewLast}}
+                        <tr>
+                            <td>{{date}}</td>
+                            <td>{{project}}</td>
+                            <td>{{role}}</td>
+                            <td>{{timeComp}}</td>
+                            <td>{{startTime}}</td>
+                            <td>{{endTime}}</td>
+                            <td>{{totalHr}}</td>
+                            <td>{{normal}}</td>
+                            <td>{{overtime}}</td>
+                            <td>{{sick}}</td>
+                            <td>
+                                <select name="pending" id="pending">
+                                    <option value="pending">Pending</option>
+                                    <option value="approving">Approved</option>
+                                    <option value="declined">Declined</option>
+                                </select>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>
+<template name="expenseSubmitView">
+    <!-- banner section -->
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>expense sheet information</h2>
+            </div>
+        </div>
+    </div>
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            {{> expenseSubmit}}
+            <div class="page-content-container">
+                <div class="page-content-title">
+                    <hr class="section-hr">
+                    <h2>employee time sheet information</h2>
+                    <hr class="section-hr">
+                </div>
+                <div class="table-content-box">
+                    <table class="table-content">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>E-mail</th>
+                                <th>Department</th>
+                                <th>Item</th>
+                                <th>Item Date</th>
+                                <th>Purpose</th>
+                                <th>Reciept</th>
+                                <th>Approval Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each expense}}
+                                <tr>
+                                    <td>{{first}}</td>
+                                    <td>{{last}}</td>
+                                    <td>{{email}}</td>
+                                    <td>{{department}}</td>
+                                    <td>{{item1}}</td>
+                                    <td>{{itemdate}}</td>
+                                    <td>{{purpose}}</td>
+                                    <td></td>
+                                    <td><span class="{{#if checked}}checked{{/if}}">
+                                            <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+                                            <button class="delete">x</button></span></td>
+                                </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<template name="expenseSubmit">
+    <div class="page-content-container">
+        <!-- expense submission form -->
+        <form>
+            <div class="page-content-title">
+                <hr class="section-hr">
+                <h2>expense sheet submission form</h2>
+                <hr class="section-hr">
+            </div>
+            <div class="page-content-container">
+                <h2>Employee Information</h2>
+                <input class="register-formfield" type="text" placeholder="First Name" id="firstName" required>
+                <input class="register-formfield" type="text" placeholder="Last Name" id="lastName" required>
+                <input class="register-formfield" type="email" placeholder="Email" id="email" required>
+                <input class="register-formfield" type="text" placeholder="Department" id="department" required>
+                <br><br>
+                <h2>Item Information</h2>
+                <input class="register-formfield" type="text" placeholder="Item" id="item" required>
+                <input class="register-formfield" type="text" placeholder="Purpose" id="purpose" required>
+                <input class="register-formfield" type="date" placeholder="Item Date" id="itemDate" required>
+                <input class="register-formfield" type="file" placeholder="Reciept" id="reciept">
+            </div>
+            <input class="register-submit-button" type="submit" value="SUBMIT">
+        </form>
+        <hr class="section-hr">
+        <!-- expense submission form end -->
+    </div>
+</template>
+<template name="myTimesheets">
+    <div class="page-content-container">
+        <div class="page-content-title">
+            <hr class="section-hr">
+            <h2>time sheet dashboard information</h2>
+            <hr class="section-hr">
+        </div>
+        <div class="page-content-title">
+            <h2>Year: {{getYear}} | Week: {{getDateWorkWeek}}</h2>
+        </div>
+        <form class="insertHours">
+            <div class="table-content-box">
+                <!-- <div class="calendar"> -->
+                <table class="table-content" id="Work-info">
+                    <thead>
+                        <tr>
+                            <th>Projects Name</th>
+                            <th>Week</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursaday</th>
+                            <th>Friday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <!-- <td><select class="actionSelect" id="projectOptions"> -->
+                            <td class="dashboard-timesheet-td-dropdown"><select class="dashboard-timesheet-select-dropdown" id="projectOptions">
+                                    <option enbled="enabled">Select Project</option>
+                                    <option value="Vacation">Vacations</option>
+                                    <option value="sickLeave">Sick Leave</option>
+                                    {{#each employeeprojects}}
+                                        <option value="{{this.option}}">{{project}}</option>
+                                    {{/each}}
+                                </select></td>
+                            <td><input class="dashboard-timesheet-formfield" type="text" id="week" name="week" value="{{getDateWorkWeek}}"></td>
+                            <td><input class="dashboard-timesheet-formfield" type="text" id="monday" name="monday" placeholder="M"></td>
+                            <td><input class="dashboard-timesheet-formfield" type="text" id="tuesday" name="tuesday" placeholder="T"></td>
+                            <td><input class="dashboard-timesheet-formfield" type="text" id="wednesday" name="wednesday" placeholder="W"></td>
+                            <td><input class="dashboard-timesheet-formfield" type="text" id="thursday" name="thursday" placeholder="Th"></td>
+                            <td><input class="dashboard-timesheet-formfield" type="text" id="friday" name="friday" placeholder="F"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <input class="timesheet-submit-button" type="submit" value="SUBMIT">
+        </form>
+    </div>
+</template>
+<template name="myDashboard">
+    <div class="page-content-container">
+        <div class="page-content-title">
+            <hr class="section-hr">
+            <h2>dashboard review visuals</h2>
+            <hr class="section-hr">
+        </div>
+        <div class="table-content-box">
+            <table class="table-content" id="Work-info">
+                <thead>
+                    <tr>
+                        <th> Projects Name </th>
+                        <th>Week</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Approval</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each timesheet}}
+                        <tr>
+                            <td>{{project}}</td>
+                            <td>{{week}}</td>
+                            <td>{{mon}}</td>
+                            <td>{{tues}}</td>
+                            <td>{{wed}}</td>
+                            <td>{{th}}</td>
+                            <td>{{fri}}</td>
+                            <td>{{approval}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <br><br>
+        <div class="table-content-box">
+            <!-- <form class="register"> -->
+            <form class="dashboard-visuals-form">
+                <div class="dashboard-visuals-content-box-left">
+                    <h2>Select a project:</h2>
+                    <select class="dashboard-visuals-select-dropdown" id="projectOptionsDash">
+                        <option enbled="enabled">Select Project</option>
+                        <option value="Vacation">Vacations</option>
+                        <option value="sickLeave">Sick Leave</option>
+                        {{#each employeeprojects}}
+                            <option value="{{this.option}}">{{project}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="dashboard-visuals-content-box-center">
+                    <h2>Select a week:</h2>
+                    <input class="dashboard-visuals-formfield" type="week" id="week" name="week">
+                </div>
+                <div class="dashboard-visuals-content-box-right">
+                    <input class="dashboard-visuals-submit-button" type="submit" value="Get Hours">
+                </div>
+            </form>
+        </div>
+        <div class="chart-content-container">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+</template>
+
+<!-- AUDITOR page -->
+<template name="AuditorProfile">
+    <!-- banner section -->
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>auditor profile</h2>
+            </div>
+        </div>
+    </div>
+    <!-- banner section end -->
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            <div class="page-content-container">
+                <div class="auditor-profile-nav-bar-wrapper">
+                    <div class="auditor-profile-nav-bar-dropdown">
+                        <button class="auditor-profile-nav-bar-dropbtn">Manager Options</button>
+                        <div class="auditor-profile-nav-bar-dropdown-content">
+                            <a href="{{ pathFor route = '#' }}">Ref Link</a>
+                        </div>
+                    </div>
+                    <div class="auditor-profile-nav-bar-dropdown">
+                        <button class="auditor-profile-nav-bar-dropbtn">Option 2</button>
+                        <div class="auditor-profile-nav-bar-dropdown-content">
+                            <a href="{{ pathFor route = '#' }}">Ref Link</a>
+                        </div>
+                    </div>
+                    <div class="auditor-profile-nav-bar-dropdown">
+                        <button class="auditor-profile-nav-bar-dropbtn">Utilities</button>
+                        <div class="auditor-profile-nav-bar-dropdown-content">
+                            <a href="{{ pathFor route = '#' }}">Ref Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<!-- AUDITOR templates -->
+<template name="AuditorRegistration">
+    <div class="main">
+        <div class="page">
+            <!-- banner section -->
+            <!-- main section -->
+            <div class="page-main">
+                <div class="container" id="main">
+                    <!-- owner & business registration form -->
+                    <form class="registerAuditor">
+                        <div class="container-title" id="main">
+                            <h2>Auditor</h2>
+                        </div>
+                        <div class="container-info" id="main">
+                            <div class="container-box" id="registration">
+                                <input type="email" placeholder="Email" name="regEmail" id="regEmail" required>
+                                <input type="password" placeholder="Password" name="regPassword" id="regPassword" required>
+                            </div>
+                        </div>
+                        <input class="register-button" type="submit" value="REGISTER">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<!-- what's up with back? -->
+<template name="back"> {{> business}} </template>
+
+
+<!--  NEED REVIEW  -->
+
+<template name="myDashboardEmail">
+    <div class="page-content-container">
+        <div class="page-content-title">
+            <hr class="section-hr">
+            <h2>dashboard approval review</h2>
+            <hr class="section-hr">
+        </div>
+        <div class="table-content-box">
+            <table class="table-content" id="Work-info">
+                <thead>
+                    <tr>
+                        <th>Projects Name </th>
+                        <th>Week</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Approval</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each timesheet}}
+                        <tr>
+                            <td>{{project}}</td>
+                            <td>{{week}}</td>
+                            <td>{{mon}}</td>
+                            <td>{{tues}}</td>
+                            <td>{{wed}}</td>
+                            <td>{{th}}</td>
+                            <td>{{fri}}</td>
+                            <td>{{approval}}</td>
+                            <span>
+                                <button class="update">Approve</button>
+                            </span>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>
+
+
+<!--  CANDIDATES FOR DELETION ??  -->
+<template name="AdminListDB">
+    <div class="container">
+        <h1>Admin List</h1>
+        <table style="float:right" id="Work-info">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>E-mail</th>
+                <th>Position</th>
+                <th>Project</th>
+                <th>Address</th>
+                <th>Phone</th>
+            </tr> {{#each admin}}
+                <tr>
+                    <th>{{first}}</th>
+                    <th>{{last}}</th>
+                    <th>{{email}}</th>
+                    <th>{{position}}</th>
+                    <th>{{project}}</th>
+                    <th>{{address}}, {{city}}
+                        <br> {{state}}, {{zip}}, {{country}}
+                    </th>
+                    <th>{{phone}}</th>
+                </tr>
+            {{/each}}
+        </table>
+    </div>
+</template>
+<template name="register">
+    <div class="login_page">
+        <h2>Register</h2>
+        <form class="register">
+            <label>First Name:</label>
+            <input type="text" name="firstName" placeholder="First Name">
+            <br>
+            <label>Last Name: </label>
+            <input type="text" name="lastName" placeholder="Last Name">
+            <br>
+            <label>Middle Name:</label>
+            <input type="text" name="middleName" placeholder="Initial">
+            <br>
+            <label>Email:</label>
+            <input type="text" name="registerUser" placeholder="Username">
+            <br>
+            <label>Password:</label>
+            <input type="password" name="registerPassword" placeholder="Password">
+            <h2>Employee Information (Optional)</h2>
+            <label>Business Email:</label>
+            <input type="email" name="registerB_Email" placeholder="Business Email">
+            <br>
+            <label>Home Address:</label>
+            <input type="text" name="registerAdd" placeholder="Home Address">
+            <br>
+            <label>Phone Number:</label>
+            <input type="tel" name="registerPhone" placeholder="Phone Number">
+            <br>
+            <label>Address Line 2:</label>
+            <input type="text" name="registerAdd_2" placeholder="Address Line 2">
+            <br>
+            <label>City:</label>
+            <input type="text" name="registerCity" placeholder="City">
+            <br>
+            <label>State:</label>
+            <input type="text" name="registerState" placeholder="State">
+            <br>
+            <label>Postal/Zip Code:</label>
+            <input type="text" name="registerZip" placeholder="Postal/Zip Code">
+            <br>
+            <label>Business/Employee ID:</label>
+            <input type="text" name="registerEmpID" placeholder="Business/Employee ID">
+            <br>
+            <label>SSN:</label>
+            <input type="text" name="registerSSN" placeholder="SSN">
+            <br>
+            Position:
+            <select name="position" id="position">
+                <option value="Employee">Employee</option>
+                <option value="Manager">Manager</option>
+                <option value="Admin">Admin</option>
+            </select>
+            <p>
+                <input type="submit" value="Register">
+            </p>
+        </form>
+    </div>
+</template>
+<template name="empRegisterView">
+    <!-- <div class="page">
+    <p> List of registered Users:</p>
+    <table style="float:right" id="Work-info">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Position</th>
+        <th>Project</th>
+        <th>Project Role</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+      </tr> {{#each userslist}}
+        <tr>
+          <td>{{fname}}</td>
+          <td>{{lname}}</td>
+          <td> <a href="/myDashboardEmail/?email={{email}}" id="myLink">{{email}} </a> </td>
+          <td>{{position}}</td>
+          <td>
+            <select id="projectOptions">
+              <option name="myOption1" value="SelectProject"> SelectProject </option>
+              {{#each employeeprojects this}}
+                <option name="myOption" id="projectOptions" value="{{this.option}}">{{project}}</option>
+              {{/each}}
+            </select>
+          </td>
+          <td>{{>span}}</td>
+          <td>{{address}}, {{city}}, {{state}}, {{zip}}</td>
+          <td>{{phone}}</td> <span class="{{#if checked}}checked{{/if}}">
+            <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+            <button class="delete">x</button>
+          </span>
+        </tr>
+      {{/each}}
+    </table>
+  </div> -->
+
+    <!-- banner section -->
+    <div class="page-banner-wrapper">
+        <div class="page-banner-container">
+            <div class="page-banner-title">
+                <h2>employee list</h2>
+            </div>
+        </div>
+    </div>
+    <!-- main section -->
+    <div class="page-main-container">
+        <div class="page-content-wrapper">
+            <div class="page-content-container">
+                <!-- admin list table -->
+                <div class="page-content-title">
+                    <hr class="section-hr">
+                    <h2>employee list information</h2>
+                    <hr class="section-hr">
+                </div>
+                <div class="table-content-box">
+                    <!-- <table class="admin-list-page-table"> -->
+                    <table class="table-content">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Position</th>
+                                <th>Project</th>
+                                <th>Project Role</th>
+                                <th>Address</th>
+                                <th>Phone Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each userslist}}
+                                <tr>
+                                    <td>{{fname}}</td>
+                                    <td>{{lname}}</td>
+                                    <td><a href="/myDashboardEmail/?email={{email}}" id="myLink">{{email}}</a></td>
+                                    <td>{{position}}</td>
+                                    <td><select id="projectOptions">
+                                            <option name="myOption1" value="SelectProject">Select Project</option>
+                                            {{#each employeeprojects this}}
+                                                <option name="myOption" id="projectOptions" value="{{this.option}}">{{project}}</option>
+                                            {{/each}}
+                                        </select></td>
+                                    <td>{{>span}}</td>
+                                    <td>{{address}}, {{city}}, {{state}}, {{zip}}</td>
+                                    <td>{{phone}}</td>
+                                    <td><span class="{{#if checked}}checked{{/if}}">
+                                            <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+                                            <button class="delete">x</button></span></td>
+                                </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- admin list table end -->
+            </div>
+        </div>
+    </div>
+</template>
+<template name="hourJustification">
+    <div class="page-content-container">
+        <div class="page-content-title">
+            <hr class="section-hr">
+            <h2>hours justification</h2>
+            <hr class="section-hr">
+        </div>
+        <form class="hourJust">
+            <div class="table-content-box">
+                <table class="table-content" id="Work-info">
+                    <ul>
+                        <div class="hour">
+                            <h2>Project Name:</h2>
+                            <input type="text" name="resourceName">
+                            <h2>Status:</h2>
+                            <select name="status" id="status">
+                                <option value="option">Select One</option>
+                                <option value="complete">Complete</option>
+                                <option value="inComplete">Incomplete</option>
+                            </select>
+                            <h2>Week / Year From</h2>
+                            <input type="week" id="week" name="week" style="width:100px;flex-grow: 0;">
+                            <h2>Week / Year To</h2>
+                            <input type="week" id="week" name="week" style="width:100px;flex-grow: 0;">
+                            <h2>Hours Worked:</h2>
+                            <input type="number" name="resourceName">
+                            <h2>Explanation:</h2>
+                            <textarea name="message" rows="4" cols="30"></textarea>
+                            <input type="submit" value="Submit">
+                        </div>
+                    </ul>
+                </table>
+            </div>
+        </form>
+    </div>
+</template>

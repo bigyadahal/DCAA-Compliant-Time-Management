@@ -1,0 +1,1062 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/**********************************************************/
+/*  TABLE OF CONTENTS (START)                             */
+/**********************************************************/
+/*   1. HEADER                                            */
+/*    1.1 NAV-BAR - LOGO (LEFT)                           */
+/*    1.2 NAV-BAR - LINKS (CENTER)                        */
+/*    1.3 NAV-BAR - LOGIN BUTTON (RIGHT)                  */
+/*   2. FOOTER                                            */
+/*    2.1 WRAPPERS                                        */
+/*    2.2 GLOBALS                                         */
+/*    2.3 LINKS                                           */
+/*    2.4 SOCIALS                                         */
+/*    2.5 LOGO TEXT                                       */
+/*    2.6 LOGO                                            */
+/*   3. PAGE                                              */
+/*    3.1 BANNER WRAPPER                                  */
+/*    3.2 BANNER CONTENT                                  */
+/*    3.3 CONTENT WRAPPER                                 */
+/*    3.4 MAIN CONTENT                                    */
+/*   4. FORMS & TABLES                                    */
+/*    4.1 REGISTER FORMS                                  */
+/*    4.2 TIMESHEET FORMS                                 */
+/*    4.x TABLES                                          */
+/*   5. HOME                                              */
+/*    5.1 BANNER NAV-BAR                                  */
+/*    5.2 CONTENT TEXTBOX                                 */
+/*   6. LOGIN                                             */
+/*    6.1 CONTAINER                                       */
+/*    6.2 FORM                                            */
+/*    6.3 BUTTONS                                         */
+/*   7. CHANGEPWD                                         */
+/*    7.1 CONTAINER                                       */
+/*    7.2 FORM                                            */
+/*    7.3 BUTTONS                                         */
+/*   8. PROFILES (SHARED ELEMENTS)                        */
+/*    8.1 NAV-BAR                                         */
+/*   9. OWNER PROFILE                                     */
+/*    9.X ...                                             */
+/*  10. OWNER & ADMIN PROFILE (SHARED ELEMENTS)           */
+/*    10.1 SEND EMPLOYEE REGISTRATION EMAIL               */
+/*    10.2 ASSIGN EMPLOYEE TO PROJECT                     */
+/*  11. ADMIN PROFILE                                     */
+/*    11.X ...                                            */
+/*  12. OWNER, ADMIN, & EMPLOYEE PROFILE (SHARED ELEMENTS)*/
+/*    12.X ...                                            */
+/*  13. AUDITOR PROFILE                                   */
+/*    13.X ...                                            */
+/*                                                        */
+/**********************************************************/
+/**********************************************************/
+/*  1. HEADER                                             */
+/**********************************************************/
+header {
+  display: grid;
+  grid-template-areas:
+    'header_logo nav_bar nav_bar nav_bar nav_bar nav_bar nav_bar login_button';
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #333;
+}
+
+/*  1.1 NAV-BAR - LOGO (LEFT)  */
+/**********************************************************/
+.header-bar-logo {
+  grid-area: header_logo;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+.header-logo-image {
+  height: 65px;
+  width: 65px;
+}
+
+/*  1.2 NAV-BAR - LINKS (CENTER)  */
+/**********************************************************/
+.header-bar-nav {
+  grid-area: nav_bar;
+  justify-self: end;
+}
+
+.header-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.header-list-item {
+  display: inline-block;
+  padding: 0px 10px;
+}
+
+.header-link {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.header-link:hover {
+  border-bottom: 4px solid darkcyan;
+}
+
+/*  1.3 NAV-BAR - LOGIN/LOGOUT BUTTON (RIGHT)  */
+/**********************************************************/
+.header-bar-login-button {
+  grid-area: login_button;
+  justify-self: center;
+}
+
+.header-login-button {
+  padding: 9px 25px;
+  background-color: darkcyan;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.header-login-button:hover {
+  background-color: white;
+  color: darkcyan;
+}
+
+/**********************************************************/
+/*  2. FOOTER                                             */
+/**********************************************************/
+footer {
+  display: grid;
+  grid-template-areas:
+    'footer_left footer_center footer_right footer_logo';
+  padding: 20px 40px;
+  background-color: #333;
+  align-items: center;
+}
+
+/*  2.1 FOOTER - WRAPPERS  */
+/**********************************************************/
+.footer-container-left {
+  grid-area: footer_left;
+}
+
+.footer-container-center {
+  grid-area: footer_center;
+}
+
+.footer-container-right {
+  grid-area: footer_right;
+  justify-self: end;
+}
+
+/*  2.2 FOOTER - GLOBALS  */
+/**********************************************************/
+footer h2 {
+  text-transform: uppercase !important;
+  color: darkcyan;
+  font-size: 14px;
+}
+
+/*  2.3 FOOTER - LINKS  */
+/**********************************************************/
+.footer-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.footer-list-item {
+  display: list-item;
+  padding: 3px 10px;
+}
+
+.footer-link {
+  display: block;
+  color: white;
+  text-align: left;
+  padding: 2px 0px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  font-size: 14px;
+}
+
+.footer-link:hover {
+  color: darkcyan;
+}
+
+/*  2.4 FOOTER - SOCIALS  */
+/**********************************************************/
+.footer-social {
+  padding: 8px 10px;
+}
+
+.footer-social-logo {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.footer-social-logo:hover {
+  background-color: white;
+  border-radius: 8px;
+  height: 35px;
+  width: 35px;
+}
+
+/*  2.5 FOOTER - LOGO TEXT  */
+/**********************************************************/
+.footer-container-right-textbox {
+  color: #b08d57;
+  text-align: right;
+  font-size: 12px;
+}
+
+/*  2.6 FOOTER - LOGO  */
+/**********************************************************/
+.footer-container-logo {
+  grid-area: footer_logo;
+  justify-self: center;
+  margin-left: 10px;
+}
+
+.footer-dcaa-logo {
+  height: 100px;
+  width: 100px;
+}
+
+/**********************************************************/
+/*  3. PAGE                                               */
+/**********************************************************/
+/*  3.1 PAGE - BANNER WRAPPER  */
+/**********************************************************/
+.page-banner-wrapper {
+  background-color: #202020;
+  text-align: center;
+}
+
+/*  3.2 PAGE - BANNER CONTENT  */
+/**********************************************************/
+.page-banner-container {
+  width: 90%;
+  align-self: center;
+  margin: auto;
+  padding: 12px 0;
+}
+
+.page-banner-title {
+  padding: 12px 0 5px 0;
+  margin-bottom: 6px;
+  border: 6px solid white;
+  border-radius: 8px;
+}
+
+.page-banner-title h2 {
+  text-transform: uppercase !important;
+  color: white;
+}
+
+.page-banner-byline {
+  color: darkcyan;
+}
+
+.page-banner-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.page-banner-item {
+  padding: 12px 6px;
+}
+
+.page-banner-link {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.page-banner-link:hover {
+  background-color: #333;
+  border-bottom: 4px solid darkcyan;
+  border-radius: 8px;
+}
+
+/*  3.3 PAGE - CONTENT WRAPPER  */
+/**********************************************************/
+.page-main-container {
+  align-items: center;
+  text-align: center;
+}
+
+/*  3.4 PAGE - MAIN CONTENT  */
+/**********************************************************/
+.page-content-wrapper {
+  width: 90%;
+  min-height: 725px;
+  margin: auto;
+  padding: 0 0 12px 0;
+  background-color: darkcyan;
+  color: white;
+}
+
+.page-content-container {}
+
+.page-content-title {
+  padding: 20px 0 5px 0;
+  margin-bottom: 6px;
+}
+
+.page-content-title h2 {
+  text-transform: uppercase !important;
+  color: white;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.page-content-byline {
+  color: black;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.page-content-footer-gap {
+  margin: 60px 0;
+}
+
+.section-hr {
+  width: 90%;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/**********************************************************/
+/*  4. FORMS & TABLES                                     */
+/**********************************************************/
+/*  4.1 FORMS & TABLES - REGISTER FORMS  */
+/**********************************************************/
+.register-form>form {}
+
+.register-formfield::placeholder {
+  color: dimgray;
+  font-style: italic;
+}
+
+.register-formfield {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px 20px;
+  margin: 5px 5px;
+  width: 40%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.register-formfield:hover {
+  background-color: #C3E4E8;
+}
+
+.register-select-dropdown {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px 20px;
+  margin: 8px 0px;
+  width: 20%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.register-submit-button {
+  display: inline-block;
+  padding: 8px 0;
+  margin-top: 25px;
+  margin-bottom: 30px;
+  background-color: white;
+  width: 220px;
+  height: 40px;
+  border-radius: 4px;
+  color: darkcyan;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.register-submit-button:hover {
+  background-color: grey;
+  color: white;
+}
+
+/*  4.2 FORMS & TABLES - TIMESHEET FORMS  */
+/**********************************************************/
+.timesheet-form>form {}
+
+.timesheet-formfield::placeholder {
+  color: dimgray;
+  font-style: italic;
+}
+
+.timesheet-formfield {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px 20px;
+  margin: 5px 5px;
+  width: 30%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.timesheet-formfield:hover {
+  background-color: #C3E4E8;
+}
+
+.timesheet-select-dropdown {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px 20px;
+  margin: 8px 0px;
+  width: 20%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.timesheet-textarea {
+  width: 61%;
+  height: auto;
+  margin-bottom: 15px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.timesheet-submit-button {
+  display: inline-block;
+  padding: 8px 0;
+  margin-top: 25px;
+  margin-bottom: 30px;
+  background-color: white;
+  width: 220px;
+  height: 40px;
+  border-radius: 4px;
+  color: darkcyan;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.timesheet-submit-button:hover {
+  background-color: grey;
+  color: white;
+}
+
+/*  4.3 FORMS & TABLES - DASHBOARD TIMESHEET FORMS  */
+/**********************************************************/
+.dashboard-timesheet-formfield {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px 20px;
+  margin: 5px 5px;
+  width: 85%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.dashboard-timesheet-formfield:hover {
+  background-color: #C3E4E8;
+}
+
+.dashboard-timesheet-select-dropdown {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px 20px;
+  margin: 8px 0px;
+  width: 85%;
+  min-width: 180px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.dashboard-timesheet-submit-button {
+  display: inline-block;
+  padding: 8px 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: darkcyan;
+  width: 230px;
+  height: 55px;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dashboard-timesheet-submit-visuals-button:hover {
+  background-color: grey;
+  color: white;
+}
+
+/*  4.4 FORMS & TABLES - DASHBOARD VISUALS FORMS  */
+/**********************************************************/
+.dashboard-visuals-formfield {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px 20px;
+  margin: 5px 5px;
+  width: 85%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.dashboard-visuals-formfield:hover {
+  background-color: #C3E4E8;
+}
+
+.dashboard-visuals-select-dropdown {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px 20px;
+  margin: 8px 0px;
+  width: 85%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.dashboard-visuals-submit-button {
+  display: inline-block;
+  padding: 8px 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: darkcyan;
+  width: 230px;
+  height: 55px;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dashboard-visuals-submit-button:hover {
+  background-color: grey;
+  color: white;
+}
+
+/*  4.x FORMS & TABLES - CONTENT BOX  */
+/**********************************************************/
+.table-content-box {
+  background-color: white;
+  margin: auto;
+  padding: 5px;
+  align-content: center;
+  border-radius: 6px;
+  width: 95%;
+  color: black;
+}
+
+/*  4.x FORMS & TABLES - TABLES  */
+/**********************************************************/
+.table-content {
+    border-collapse: collapse;
+    margin: 1px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.table-content thead tr {
+  /* background-color: darkgray; */
+  background-color: slategray;
+  text-align: left;
+  font-size: 0.95em;
+  font-weight: bold;
+}
+
+.table-content th,
+.table-content td {
+  padding: 12px 15px;
+}
+
+.table-content tbody tr {
+  border-bottom: 1px solid #ddd;
+  font-size: 0.9em;
+}
+
+.table-content tbody tr:nth-child(even) {
+  background-color: lightblue;
+}
+
+.table-content tbody tr:nth-child(odd) {
+  background-color: lightseagreen;
+}
+
+.table-content tbody tr:last-child {
+  border-bottom: 2px solid darkgray;
+}
+
+/*  4.x FORMS & TABLES - TABLES  */
+/**********************************************************/
+.chart-content-container {
+  background-color: gray;
+  min-width: 300px;
+  min-height: 250px;
+}
+
+/**********************************************************/
+/*  5. HOME                                               */
+/**********************************************************/
+/*  5.1 HOME - BANNER NAV-BAR  */
+/**********************************************************/
+.home-page-banner-nav-bar {
+  padding: 0;
+  margin-bottom: 6px;
+  border: 2px solid white;
+  border-radius: 8px;
+}
+
+.home-page-banner-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/*  5.2 HOME - CONTENT TEXTBOX  */
+/**********************************************************/
+.home-page-content-textbox-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 2px 6px;
+  margin: 20px;
+}
+
+.home-page-content-textbox-container {
+  background-color: white;
+  width: 95%;
+  padding: 6px 3px 12px 3px;
+  border-radius: 6px;
+}
+
+.home-page-content-textbox-links a {
+  text-transform: uppercase !important;
+  color: darkcyan;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.home-page-content-textbox-links a:hover {
+  text-transform: uppercase !important;
+  font-weight: bold;
+}
+
+.home-page-content-textbox-title {
+  text-transform: uppercase !important;
+  padding: 8px 0 10px 0;
+  color: black;
+  font-weight: 500;
+  font-size: 14px
+}
+
+.home-page-content-textbox-image {
+  justify-self: center;
+  padding-top: 20px;
+  width: 100%;
+  border-radius: 6px;
+}
+
+/**********************************************************/
+/*  6. LOGIN                                              */
+/**********************************************************/
+/*  6.1 LOGIN - CONTAINER  */
+/**********************************************************/
+.login-page-content-container {
+  padding-top: 50px;
+}
+
+.login-page-content-box {
+  background-color: white;
+  margin: auto;
+  padding: 6px 3px 12px 3px;
+  border-radius: 6px;
+  width: 40%;
+  color: black;
+  font-size: 12px;
+}
+
+/*  6.2 LOGIN - FORM  */
+/**********************************************************/
+.login-form>form {
+  margin-top: 40px;
+}
+
+.login-page-formfield {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px 20px;
+  margin: 5px 5px;
+  width: 95%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-page-formfield:hover {
+  background-color: #C3E4E8;
+}
+
+/*  6.3 LOGIN - BUTTONS  */
+/**********************************************************/
+.login-page-button {
+  padding: 8px 0;
+  margin: 6px 0;
+  background-color: white;
+  width: 280px;
+  height: 45px;
+  border-radius: 4px;
+  color: darkcyan;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.login-page-button:hover {
+  background-color: grey;
+  color: white;
+}
+
+.login-page-changepwd-button {
+  display: inline-block;
+  padding: 5px;
+  margin-bottom: 80px;
+  background-color: #48494a;
+  width: 280px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  color: darkcyan;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-page-changepwd-button:hover {
+  background-color: white;
+  color: darkcyan;
+  font-weight: bold;
+}
+
+/**********************************************************/
+/*  7. CHANGEPWD                                          */
+/**********************************************************/
+/*  7.1 CHANGEPWD - CONTAINER  */
+/**********************************************************/
+.changepwd-page-content-container {
+  padding-top: 50px;
+}
+
+.changepwd-page-content-box {
+  background-color: white;
+  margin: auto;
+  padding: 6px 3px 12px 3px;
+  border-radius: 6px;
+  width: 40%;
+  color: black;
+  font-size: 12px;
+}
+
+/*  7.2 CHANGEPWD - FORM  */
+/**********************************************************/
+.changepwd-page-form>form {
+  margin-top: 40px;
+}
+
+.changepwd-page-formfield {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px 20px;
+  margin: 5px 5px;
+  width: 85%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.changepwd-page-formfield:hover {
+  background-color: #C3E4E8;
+}
+
+/*  7.3 CHANGEPWD - BUTTONS  */
+/**********************************************************/
+.changepwd-page-button {
+  padding: 8px 0;
+  margin-top: 6px;
+  margin-bottom: 80px;
+  background-color: white;
+  width: 280px;
+  height: 45px;
+  border-radius: 4px;
+  color: darkcyan;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.changepwd-page-button:hover {
+  background-color: grey;
+  color: white;
+}
+
+/**********************************************************/
+/*  8. PROFILES (SHARED ELEMENTS)                         */
+/**********************************************************/
+/*  8.1 PROFILES (SHARED ELEMENTS) - NAV-BAR
+/**********************************************************/
+.profile-nav-bar-wrapper {
+  padding: 20px;
+  margin: 0;
+  background: #333;
+}
+
+.profile-nav-bar-dropbtn {
+  background-color: darkcyan;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.profile-nav-bar-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.profile-nav-bar-dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.profile-nav-bar-dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.profile-nav-bar-dropdown:hover .profile-nav-bar-dropdown-content {
+  display: block;
+}
+
+.profile-nav-bar-dropdown:hover .profile-nav-bar-dropbtn {
+  background-color: darkcyan;
+}
+
+/**********************************************************/
+/*  9. OWNER PROFILE                                      */
+/**********************************************************/
+/*  9.x OWNER PROFILE - X  */
+/**********************************************************/
+
+
+/**********************************************************/
+/*  10. OWNER & ADMIN PROFILE (SHARED ELEMENTS)           */
+/**********************************************************/
+/*  10.1 OWNER & ADMIN PROFILE (SHARED ELEMENTS) -
+          SEND EMPLOYEE REGISTRATION EMAIL  */
+/**********************************************************/
+.employee-registration-email-content-container {}
+
+.employee-registration-email-form>form {
+  margin-top: 40px;
+}
+
+.employee-registration-email-content-box {
+  background-color: white;
+  margin: auto;
+  padding: 6px 3px 12px 3px;
+  border-radius: 6px;
+  width: 40%;
+  color: black;
+  font-size: 12px;
+}
+
+.employee-registration-email-formfield {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px 20px;
+  margin: 5px 5px;
+  width: 85%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.employee-registration-email-formfield:hover {
+  background-color: #C3E4E8;
+}
+
+/*  10.2 OWNER & ADMIN PROFILE (SHARED ELEMENTS) -
+          ASSIGN EMPLOYEE TO PROJECT  */
+/**********************************************************/
+.employee-project-assignment-content-container {}
+
+.employee-project-assignment-form>form {
+  margin-top: 40px;
+}
+
+.employee-project-assignment-content-box {
+  display: grid;
+  grid-template-areas:
+    'project_name project_role employee_email_address';
+  list-style-type: none;
+  background-color: white;
+  margin: auto;
+  padding: 6px 3px 12px 3px;
+  border-radius: 6px;
+  width: 85%;
+  color: black;
+  font-size: 12px;
+}
+
+.employee-project-assignment-content-box-left {
+  grid-area: project_name;
+}
+
+.employee-project-assignment-content-box-center {
+  grid-area: project_role;
+}
+
+.employee-project-assignment-content-box-right {
+  grid-area: employee_email_address;
+}
+
+.employee-project-assignment-formfield {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px 20px;
+  margin: 5px 5px;
+  width: 95%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.employee-project-assignment-formfield:hover {
+  background-color: #C3E4E8;
+}
+
+/**********************************************************/
+/*  11. ADMIN PROFILE                                     */
+/**********************************************************/
+
+
+/**********************************************************/
+/*  12. OWNER, ADMIN, & EMPLOYEE PROFILE (SHARED ELEMENTS)*/
+/**********************************************************/
+/*  12.x OWNER, ADMIN, & EMPLOYEE PROFILE (SHARED ELEMENTS)
+          - LAST 30 DAYS INFORMATION  */
+/**********************************************************/
+.last-thirty-days-content-container {}
+
+/*  12.x OWNER, ADMIN, & EMPLOYEE PROFILE (SHARED ELEMENTS)
+          - TIMESHEET INFO / VIEW TIME  */
+/**********************************************************/
+.timesheet-info-content-container {
+  margin-bottom: 35px;
+}
+
+/*  12.x OWNER, ADMIN, & EMPLOYEE PROFILE (SHARED ELEMENTS)
+          - DASHBOARD VISUALS CONTENT BOX  */
+/**********************************************************/
+.dashboard-visuals-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    'dashboard_left dashboard_center dashboard_right';
+  align-content: center;
+}
+
+.dashboard-visuals-form h2 {
+  font-size: 18px;
+}
+
+.dashboard-visuals-content-box-left {
+  grid-area: dashboard_left;
+  align-self: center;
+  align-content: center;
+}
+
+.dashboard-visuals-content-box-center {
+  grid-area: dashboard_center;
+  align-self: center;
+  align-content: center;
+}
+
+.dashboard-visuals-content-box-right {
+  grid-area: dashboard_right;
+  align-self: center;
+  align-content: center;
+}
+
+/**********************************************************/
+/*  13. AUDITOR PROFILE                                   */
+/**********************************************************/
+
+
+
+
+
+
+#calendar {
+  padding: 0px 0px;
+  width: 200px;
+  height: 300px;
+  text-align: center;
+  top: 1%;
+  bottom: 1%;
+  float: center;
+}
