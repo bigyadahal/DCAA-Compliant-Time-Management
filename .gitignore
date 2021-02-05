@@ -1,0 +1,3 @@
+# NodeJS specific #
+node_modules/
+.meteor/*
